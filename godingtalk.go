@@ -122,6 +122,11 @@ func NewDingTalkClient(corpID string, corpSecret string) *DingTalkClient {
 	return c
 }
 
+func (c *DingTalkClient) WithAgentID(agentID string) *DingTalkClient {
+	c.AgentID = agentID
+	return c
+}
+
 //RefreshAccessToken is to get a valid access token
 func (c *DingTalkClient) RefreshAccessToken() error {
 	var data AccessTokenResponse
